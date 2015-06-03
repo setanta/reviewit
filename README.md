@@ -28,14 +28,16 @@ $ cd reviewit
 $ gem install bundle
 $ bundle install
 $ ./scripts/first_install
-$ RAILS_ENV=production unicorn_rails
+```
+And then run:
+```
+$ RAILS_SERVE_STATIC_FILES=1 RAILS_ENV=production unicorn_rails
 ```
 
 Notes:
 
   1. This will open a server on port 8080, see unicorn_rails --help for more info like running unicorn as a daemon.
-  2. The assets (fonts and images) wont show until you change `config.serve_static_assets` to false in config/environments/production.rb.
-  3. Unicorn was made to work with a proxy server like [Ngix](http://nginx.org/), so try to use it.
+  2. Unicorn was made to work with a proxy server like [Ngix](http://nginx.org/), so try to use it. (In this case do not run it with the `RAILS_SERVE_STATIC_FILES` environment variable.)
 
 ## Setting up your Project
 
